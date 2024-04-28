@@ -2,8 +2,10 @@ cask "epubkit" do
   arch arm: "arm64", intel: "x64"
 
   version "1.0.14"
+  sha256 :no_check
 
-  url "https://github.com/djyde/epubkit-release/releases/download/v#{version}/epubkit-#{version}-#{arch}.dmg"
+  url "https://github.com/djyde/epubkit-release/releases/download/v#{version}/epubkit-#{version}-#{arch}.dmg",
+      verified: "github.com/djyde/epubkit-release/"
   name "epubkit"
   desc "Best tool to convert web pages to EPUB"
   homepage "https://epubkit.app/"
