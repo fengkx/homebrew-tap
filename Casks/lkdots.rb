@@ -1,9 +1,9 @@
 cask "lkdots" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "0.1.1"
-  sha256 intel: "d5031208456a8603fbf4751d04e1ddaabb2d154469e114e7c5dcb57001f0728d",
-         arm:   "8802dac4e9e2c01c8ae0f9280c4d0f981177b7d25a179a5ea4f7dfd612687ad3"
+  version "0.2.0"
+  sha256 intel: "cedee22199a4f65b1f00bdb1ffdda343fdcb87f91bcb20b4b1b36810eb2b620d",
+         arm:   "e1058ccd56b224f92c6a3501e3463c525c6af25098775e02e9319e2e74e3a6ca"
 
   url "https://github.com/fengkx/lkdots/releases/download/v#{version}/lkdots-v#{version}-#{arch}-apple-darwin.tar.gz"
   name "lkdots"
