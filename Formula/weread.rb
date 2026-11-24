@@ -2,6 +2,7 @@ class Weread < Formula
   desc "Access your WeRead bookshelf and track reading sessions"
   homepage "https://github.com/fengkx/homebrew-tap/releases/tag/weread-v0.1.0"
   version "0.1.0"
+  revision 1
 
   on_macos do
     on_arm do
@@ -27,12 +28,19 @@ class Weread < Formula
     end
   end
 
+  resource "agent-skill" do
+    url "https://github.com/fengkx/homebrew-tap/releases/download/weread-v#{version}/SKILL.md", using: :nounzip
+    sha256 "4582e262470f8cd1e8c4fc431b287b2c75a7e1a1652bbbe148f92a65368509d7"
+  end
+
   def install
+    resource("agent-skill").stage { (share/"weread/skills/weread").install "SKILL.md" }
     bin.install "weread"
     doc.install "THIRD-PARTY-NOTICES.txt", "Bun-LICENSE.md"
   end
 
   test do
+    assert_path_exists share/"weread/skills/weread/SKILL.md"
     assert_match version.to_s, shell_output("#{bin}/weread --version")
   end
 end
