@@ -29,7 +29,7 @@ class Weread < Formula
   end
 
   resource "agent-skill" do
-    url "https://github.com/fengkx/homebrew-tap/releases/download/weread-v#{version}/SKILL.md", using: :nounzip
+    url "https://github.com/fengkx/homebrew-tap/releases/download/weread-v0.1.0/SKILL.md", using: :nounzip
     sha256 "4582e262470f8cd1e8c4fc431b287b2c75a7e1a1652bbbe148f92a65368509d7"
   end
 
