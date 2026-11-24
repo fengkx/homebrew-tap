@@ -24,7 +24,7 @@ weread read time-interval 3300111666 --minutes 2
 ## 安装与登录
 
 1. 运行 `weread --version`。如果命令不存在，在装有 Homebrew 的 macOS 或 Linux 上执行 `brew install fengkx/tap/weread`，再检查版本。没有 Homebrew 时，从[公开发布页](https://github.com/fengkx/homebrew-tap/releases?q=weread-v)下载匹配系统和 CPU 架构的压缩包，解压后直接运行 `./weread --version`。
-2. 执行 `weread auth show` 检查本地 Web 会话。若已有会话，直接执行请求。若缺少会话或服务提示登录过期，运行 `weread auth login`，请用户用微信扫码确认。会话文件含有凭据，检查账户时用 `auth show` 即可。
+2. 执行 `weread auth show` 检查本地 Web 会话。若已有会话，直接执行请求。CLI 遇到登录过期会自动续期并保存 Cookie，只读请求会重试一次。用户明确要求续期时执行 `weread auth renew`。若上报过程中发生续期，先用 `weread read status <bookId>` 核对已入账时长。若缺少会话、刷新凭据或服务拒绝续期，运行 `weread auth login`，请用户用微信扫码确认。会话文件含有凭据，检查账户时用 `auth show` 即可。
 3. 如果用户看不到终端，在交互式终端运行下面两行，将生成的 PNG 展示给用户。保持登录进程运行；若提示输入四位验证码，让用户在该终端输入。登录成功后继续原任务。
 
 ```sh
